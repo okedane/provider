@@ -5,16 +5,18 @@ import 'package:provider_1/providers/all_products.dart';
 import 'package:provider_1/widgets/product_item.dart';
 
 class Product_Grid extends StatelessWidget {
+  const Product_Grid({super.key});
+
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<AllProducts>(context);
-    final all_product = productData.allproducts;
+    final allProduct = productData.allproducts;
 
     return GridView.builder(
       padding: const EdgeInsets.all(10.0),
-      itemCount: all_product.length,
+      itemCount: allProduct.length,
       itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-        value: all_product[i],
+        value: allProduct[i],
         child: ProductItem(),
       ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

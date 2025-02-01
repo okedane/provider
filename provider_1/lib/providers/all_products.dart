@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import './product.dart';
 
 class AllProducts with ChangeNotifier {
-  List<Product> _allproducts = List.generate(
+  final List<Product> _allproducts = List.generate(
     25,
     (index) {
       return Product(
